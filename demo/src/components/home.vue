@@ -33,9 +33,9 @@
 				</el-menu>
 				<div class="line"></div>
 			</el-header>
-			<el-main>
+			<div>
 				<router-view></router-view>
-			</el-main>
+			</div>
 		</el-container>
 	</div>
 </template>

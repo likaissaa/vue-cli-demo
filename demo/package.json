@@ -12,6 +12,7 @@
     "mockdev": "npm run mock & npm run dev"
   },
   "dependencies": {
+    "better-scroll":"^0.1.15",  
     "axios": "^0.17.1",
     "echarts": "^4.0.4",
     "element-ui": "^2.0.11",

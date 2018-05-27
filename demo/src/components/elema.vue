@@ -27,12 +27,13 @@
 				我是弹出框
 			</div>
 		</transition>-->
-		<router-view></router-view>
+		<router-view :seller="seller"></router-view>
 	</div>
 </template>
 <script>
 	import Header from '../components/header/header.vue'
 	import Star from '@/components/star/star.vue'
+	const ERR_OK=0;
 	export default{
 		data(){
 			return{
@@ -44,28 +45,28 @@
 			'v-header':Header,
 			'v-star':Star
 		},
+		created(){
+			 this.axios.get("/api/seller")
+                    .then(response => {
+                    	 if (response.data.errno === ERR_OK) {
+                    	 	this.seller=response.data.data
+                    	 	console.log(this.seller)
+				        }
+
+                    })
+		},
 		mounted(){
 			var _this=this
 			_this.clickme()
 		},
 		methods:{
 			clickme:function(){
-                this.axios.get("/api/getinfo")
-                    .then(response => {
-                    	console.log(response)
-                    	/*if(response.data.errno==0){
-                    		this.seller=response.data.data
-                    		console.log(this.seller)
-                    	}
-                    	else{
-                    		alert("失败")
-                    	}*/
-                    })
+                
 			}
 		}
 	}
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" scoped >
 @import "../common/stylus/mixin.styl"
 	/*.tab{
 		display:flex;
@@ -77,7 +78,6 @@
 		flex:1;
 		text-align: center;
 	}*/
-	#app
 		.tab
 			display:flex
 			width:100%

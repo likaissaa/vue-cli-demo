@@ -31,7 +31,7 @@ export default{
 		selectFoods:{
 			type:Array,
 			default(){
-				return [{price:20,count:1}];
+				return [];
 			}
 		},
 		deliveryPrice:{
@@ -46,6 +46,7 @@ export default{
 	computed:{
 		totalPrice(){
 			let total=0;
+			console.log(this.selectFoods);
 			this.selectFoods.forEach((food)=>{
 				total+=food.price * food.count;
 				

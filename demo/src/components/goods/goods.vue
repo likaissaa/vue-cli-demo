@@ -90,6 +90,18 @@ export default{
 				}
 			}
 			return 0;
+		},
+		selectFoods(){
+			let foods=[];
+			this.goods.forEach((good)=>{
+				good.foods.forEach((food)=>{
+					console.log("******"+food);
+					if(food.count){
+						foods.push(food);
+					}
+				})
+			});
+			return foods;
 		}
 	},
 	components:{
@@ -127,18 +139,7 @@ export default{
 			let el=foodList[index];
 			this.foodsScroll.scrollToElement(el,300) 
 		},
-		selectFoods(){
-			let foods=[];
-			this.goods.forEach((good)=>{
-				good.foods.forEach((food)=>{
-					console.log("******"+food);
-					if(food.count){
-						foods.push(food);
-					}
-				})
-			});
-			return foods;
-		}
+		
 	}
 	}
 </script>

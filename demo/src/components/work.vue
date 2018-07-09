@@ -15,6 +15,11 @@
 			<input type="text" v-model="incrementValue" />
 			<button @click="incrementWithValue">increment</button>
 		</div>
+		<div id="">
+			<p>测试 属性访问和 方法访问</p>
+			<div>1: {{doneTodosCount}}</div>
+			<div>2: {{todos}}</div>
+		</div>
 		<router-view></router-view>
 	</div>
 </template>
@@ -32,16 +37,34 @@
 					infos:[]
 				};
 			},
-			computed: mapState({
+			computed:{ 
+				...mapState({
 				count: state => state.count
-			}),
+				}),
+//				count(){
+//					return this.$store.state.count
+//				},
+//				count:function(){
+//					return this.$store.getters.count;
+//				},
+		        todos:function() {  //通过方法访问  
+		            return this.$store.getters.doneTodos;  
+		        },  
+		        doneTodosCount () {  
+		            return this.$store.getters.doneTodosCount  
+		        }  
+			},
 			methods: {
 				...mapActions({
 					add: 'increment',
 					dec: 'decrement',
 				}),
 				incrementWithValue() {
+					//可以直接mutations
+//					this.$store.commit("INCREMENTWITHVALUE",parseInt(this.incrementValue));
+					//首先提交到可以一步的action 在提交到mutations
 					this.$store.dispatch("incrementWithValue", this.incrementValue)
+					
 				},
 				getinfo() {
 					this.axios.get("/api/seller")

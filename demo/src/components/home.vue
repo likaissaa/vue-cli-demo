@@ -18,10 +18,10 @@
 					<el-menu-item index="/home/less">
 						less 样式测试
 					</el-menu-item>
-					<!--<el-menu-item index="/home/work/center">
+					<el-menu-item index="/home/work/center">
 						工作中心
 					</el-menu-item>
-					<el-menu-item index="/home/reslist">
+					<!--<el-menu-item index="/home/reslist">
 						作品列表
 					</el-menu-item>
 					<el-menu-item index="/home/mintui">

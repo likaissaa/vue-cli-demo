@@ -6,8 +6,7 @@ decrement({commit}){
 		commit('DECREMENT')
 },
 	
-	 incrementWithValue({commit},value){
-		console.log(value)
+	 incrementWithValue({commit,state},value){
 		commit("INCREMENTWITHVALUE",parseInt(value))
 	},
 	

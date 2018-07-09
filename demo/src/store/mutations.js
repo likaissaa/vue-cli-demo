@@ -1,12 +1,15 @@
 	import Vue from 'vue'
-	import {INCREMENT,DECREMENT} from './mutations-types'
+	import * as types from './mutations-types'
 	export default{
-		[INCREMENT]  (state)  {
+		[types.INCREMENT]  (state)  {
 			console.log(state)
 			state.count++
 		},
-		[DECREMENT]  (state)  {
+		[types.DECREMENT]  (state)  {
 			state.count--
+		},
+		[types.ADDTARGET]  (state,value)  {
+			state.addtarget=value;
 		},
 		INCREMENTWITHVALUE  (state, value)  {
 			state.count += value

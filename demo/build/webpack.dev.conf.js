@@ -20,8 +20,13 @@ const seller = appData.seller;
 const ratings = appData.ratings;
 const goods = appData.goods;
 
-var apiRoutes = express.Router();
-app.use('/api', apiRoutes);
+// var apiRoutes = express.Router();
+// app.use('/api', apiRoutes);
+
+
+
+
+
 
 const devWebpackConfig = merge(baseWebpackConfig, {
 	module: {

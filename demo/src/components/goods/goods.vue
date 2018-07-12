@@ -138,12 +138,12 @@
 			},
 			_initScroll() {
 				this.menuScroll = new BScroll(this.$refs.menuWrapper, {
-					click: true
-				});
-				this.foodsScroll = new BScroll(this.$refs.foodWrapper, {
-					click: true,
-					probeType: 3
-				});
+          click: true
+        });
+        this.foodsScroll = new BScroll(this.$refs.foodWrapper, {
+          click: true,
+          probeType: 3
+        });
 				this.foodsScroll.on('scroll', (pos) => {
 					this.scrollY = Math.abs(Math.round(pos.y));
 				})

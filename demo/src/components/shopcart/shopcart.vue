@@ -36,7 +36,14 @@
 			<transition name="fold">
 				<div class="shopcart-list" v-show="listShow">
 					<div class="list-header">
-						<h1 class="title">购物车</h1>
+						<h1 class="title">部门选择
+							<select class="selectDepart">
+								<option>采购</option>
+								<option>内贸</option>
+								<option>外贸</option>
+								<option>暂无</option>
+							</select>
+						</h1>
 						<span class="empty" @click="empty">清空</span>
 					</div>
 	
@@ -380,6 +387,9 @@
 					float:left;
 					font-size:14px;
 					color:rgb(7,17,27);
+					.selectDepart {
+						box-shadow: 0 2px 4px rgba(0,0,0, .6)
+					}
 				}
 				.empty{
 					float:right;

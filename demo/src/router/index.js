@@ -21,111 +21,124 @@ import store from '@/store/index';
 Vue.use(Router)
 
 export const router = new Router({
-	mode: 'history',
 	linkActiveClass:'active',
+	mode:'history',
 	routes: [{
 		path: '/',
-		redirect: '/home',
-		component: Home,
-		children: [{
-			path: '/home/',
-			redirect: '/home/login',
-			component: Login,
-			children: [{
-				path: '/home/login',
-			}]
-		}, {
-			path: '/home/register',
-			component: Register,
-			meta: {
-				auth: true
-			}
-		}, 
-		{
-			path:'/home/reslist',
-			component:Reslist,
-			meta:{
-				auth:true
-			}
-		},
-		{
-			path: '/home/work/center',
-			component: Work,
-			meta: {
-					auth: true
-			}
-		}, 
-		{
-			path: '/home/loginsuccess',
-			meta: {
-				auth: false
-			},
-			component: Loginsuccess,
-		},
-		{
-			path: '/home/mintui',
-			meta: {
-				auth: false
-			},
-			component: Mintui,
-		},
-		{
-			path: '/home/bar',
-			meta: {
-				auth: false
-			},
-			component: Bar,
-		},
-		{
-			path: '/home/elema',
-			meta: {
-				auth: false
-			},
-			component: Elema,
-			children:[{
-			path: 'goods',
-			meta: {
-				auth: false
-			},
-			component: Goods,	
-			},
-			{
-				path: 'ratings',
-				meta: {
-					auth: false
-				},
-				component: Ratings,	
-			},
-			{
-				path: 'seller',
-				meta: {
-					auth: false
-				},
-				component: Seller,	
-			}]
-		},
-		{
-			path: '/home/stylus',
-				meta: {
-					auth: false
-				},
-				component: Teststylus,	
-		},
-		{
-			path:'/home/less',
-			meta: {
-					auth: false
-				},
-			component: Less,
-		}
-		/*{
-
-			path: '*', //其他页面，强制跳转到登录页面
-			redirect: '/home/login'
-
-		},*/
-		]
+		redirect: '/goods'
+	}, {
+		path: '/goods',
+		component: Goods
+	}, {
+		path: 'ratings',
+		component: Ratings
+	}, {
+		path: 'seller',
+		component: Seller
 	}]
+	// routes: [{
+	// 	path: '/',
+	// 	redirect: '/home',
+	// 	component: Home,
+	// 	children: [{
+	// 		path: '/home/',
+	// 		redirect: '/home/login',
+	// 		component: Login,
+	// 		children: [{
+	// 			path: '/home/login',
+	// 		}]
+	// 	}, {
+	// 		path: '/home/register',
+	// 		component: Register,
+	// 		meta: {
+	// 			auth: true
+	// 		}
+	// 	}, 
+	// 	{
+	// 		path:'/home/reslist',
+	// 		component:Reslist,
+	// 		meta:{
+	// 			auth:true
+	// 		}
+	// 	},
+	// 	{
+	// 		path: '/home/work/center',
+	// 		component: Work,
+	// 		meta: {
+	// 				auth: true
+	// 		}
+	// 	}, 
+	// 	{
+	// 		path: '/home/loginsuccess',
+	// 		meta: {
+	// 			auth: false
+	// 		},
+	// 		component: Loginsuccess,
+	// 	},
+	// 	{
+	// 		path: '/home/mintui',
+	// 		meta: {
+	// 			auth: false
+	// 		},
+	// 		component: Mintui,
+	// 	},
+	// 	{
+	// 		path: '/home/bar',
+	// 		meta: {
+	// 			auth: false
+	// 		},
+	// 		component: Bar,
+	// 	},
+	// 	{
+	// 		path: '/home/elema',
+	// 		meta: {
+	// 			auth: false
+	// 		},
+	// 		component: Elema,
+	// 		children:[{
+	// 		path: 'goods',
+	// 		meta: {
+	// 			auth: false
+	// 		},
+	// 		component: Goods,	
+	// 		},
+	// 		{
+	// 			path: 'ratings',
+	// 			meta: {
+	// 				auth: false
+	// 			},
+	// 			component: Ratings,	
+	// 		},
+	// 		{
+	// 			path: 'seller',
+	// 			meta: {
+	// 				auth: false
+	// 			},
+	// 			component: Seller,	
+	// 		}]
+	// 	},
+	// 	{
+	// 		path: '/home/stylus',
+	// 			meta: {
+	// 				auth: false
+	// 			},
+	// 			component: Teststylus,	
+	// 	},
+	// 	{
+	// 		path:'/home/less',
+	// 		meta: {
+	// 				auth: false
+	// 			},
+	// 		component: Less,
+	// 	}
+	// 	/*{
+
+	// 		path: '*', //其他页面，强制跳转到登录页面
+	// 		redirect: '/home/login'
+
+	// 	},*/
+	// 	]
+	// }]
 })
 
 if (sessionStorage.getItem('user')) {

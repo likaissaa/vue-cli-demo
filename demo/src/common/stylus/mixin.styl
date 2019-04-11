@@ -1,52 +1,19 @@
 border-1px($color)
-	position:relative
-	&:after
-		display:block
-		position:absolute
-		left:0
-		bottom:0
-		width: 100%
-		border-top:1px solid $color
-		content:' '
-		
-position()
-	position:arguments
-	z-index:1
-	
-border-radius()
-	vendor('border-radius',arguments)	
-vendor(prop,args)
-	-webkit-{prop} args
-	-moz-{prop} args
-	{prop} args
-table
-	for row in 1 2 3
-		tr:nth-child({row})
-			height:10px * row
-pad(types=padding,n=5px)
-	if padding in types
-		padding n
-	if margin in types
-		margin n
-support-for-ie ?= true
-opacity(n)
-	opacity n
-	if support-for-ie
-		filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100)+')')
-comma-list()
-	inline-list()
-	li
-		&:after
-			content:""
-		&:last-child:after
-			content:""
-inline-list()
-	li
-		display inline
-		color:red
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+
+border-none()
+  &:after
+    display: none
+
 bg-image($url)
-	background-image:url($url+"@2x.png")			
-font-size = 20px
-font = font-size Arial, sans-seri
-
-
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")

@@ -1,7 +1,7 @@
 {
   "seller": {
     "name": "龙记小吃",
-    "description": "英诺儿特快",
+    "description": "英诺尔特快",
     "deliveryTime": 38,
     "score": 4.2,
     "serviceScore": 4.1,
@@ -11,7 +11,7 @@
     "deliveryPrice": 4,
     "ratingCount": 24,
     "sellCount": 90,
-    "bulletin": "食堂吃腻了的伙伴们",
+    "bulletin": "选购商品，点击购物车截图发给外卖群，没有支付功能",
     "supports": [
       {
         "type": 0,

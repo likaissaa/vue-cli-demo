@@ -15,7 +15,7 @@
     "supports": [
       {
         "type": 0,
-        "description": "付给部门组长"
+        "description": "截图给长城,付钱给部门组长"
       },
       {
         "type": 1,
@@ -48,7 +48,7 @@
   },
   "goods": [
     {
-      "name": "盖浇饭系列",
+      "name": "盖浇饭",
       "type": -1,
       "foods": [
         {

@@ -22,7 +22,6 @@ Vue.use(Router)
 
 export const router = new Router({
 	linkActiveClass:'active',
-	mode:'history',
 	routes: [{
 		path: '/',
 		redirect: '/goods'
@@ -53,7 +52,7 @@ export const router = new Router({
 	// 		meta: {
 	// 			auth: true
 	// 		}
-	// 	}, 
+	// 	},
 	// 	{
 	// 		path:'/home/reslist',
 	// 		component:Reslist,
@@ -67,7 +66,7 @@ export const router = new Router({
 	// 		meta: {
 	// 				auth: true
 	// 		}
-	// 	}, 
+	// 	},
 	// 	{
 	// 		path: '/home/loginsuccess',
 	// 		meta: {
@@ -100,21 +99,21 @@ export const router = new Router({
 	// 		meta: {
 	// 			auth: false
 	// 		},
-	// 		component: Goods,	
+	// 		component: Goods,
 	// 		},
 	// 		{
 	// 			path: 'ratings',
 	// 			meta: {
 	// 				auth: false
 	// 			},
-	// 			component: Ratings,	
+	// 			component: Ratings,
 	// 		},
 	// 		{
 	// 			path: 'seller',
 	// 			meta: {
 	// 				auth: false
 	// 			},
-	// 			component: Seller,	
+	// 			component: Seller,
 	// 		}]
 	// 	},
 	// 	{
@@ -122,7 +121,7 @@ export const router = new Router({
 	// 			meta: {
 	// 				auth: false
 	// 			},
-	// 			component: Teststylus,	
+	// 			component: Teststylus,
 	// 	},
 	// 	{
 	// 		path:'/home/less',

@@ -35,6 +35,7 @@
 <script>
 	import Header from '@/components/header/header.vue'
 	import Star from '@/components/star/star.vue'
+  const debug = process.env.NODE_ENV !== 'production';
 	const ERR_OK=0;
 	export default{
 		data(){

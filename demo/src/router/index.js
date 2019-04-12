@@ -1,21 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home.vue'
-import Login from '@/components/login.vue'
-import Register from '@/components/register.vue'
-import Work from '@/components/work.vue'
-import Newhtml from '@/components/Newhtml.vue'
-import Reslist from '@/components/reslist.vue'
-import Loginsuccess from '@/components/loginsuccess.vue'
-import Mintui from '@/components/mintui.vue'
-import Bar from '@/components/bar.vue'
-import Elema from '@/components/elema.vue'
 import Goods from '@/components/goods/goods.vue'
 import Ratings from '@/components/ratings/ratings.vue'
 import Seller from '@/components/seller/seller.vue'
-import Teststylus from '@/components/stylushtml/teststylus.vue'
-import Star from '@/components/star/star.vue'
-import Less from '@/components/Less/less.vue'
 import store from '@/store/index';
 
 Vue.use(Router)

@@ -15,12 +15,15 @@ export const router = new Router({
 		redirect: '/goods'
 	}, {
 		path: '/goods',
+    name: 'Goods',
 		component: Goods
 	}, {
 		path: 'ratings',
+    name: 'Ratings',
 		component: Ratings
 	}, {
 		path: 'seller',
+    name: 'Seller',
 		component: Seller
 	}]
 	// routes: [{

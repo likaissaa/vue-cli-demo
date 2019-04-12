@@ -9,7 +9,6 @@ Vue.use(Router)
 
 export const router = new Router({
 	linkActiveClass:'active',
-  mode: 'history',
 	routes: [{
 		path: '/',
 		redirect: '/goods'

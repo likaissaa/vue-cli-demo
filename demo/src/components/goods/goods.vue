@@ -379,7 +379,7 @@
     created() {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
 
-      const url = debug ? '/api/goods' : 'http://art.xminnov.com/sell/api/goods';
+      const url = debug ? '/api/goods' : 'http://art.xminnov.com:8080/sell/api/goods';
       this.axios.get(url).then((response) => {
         response = response.data;
         if (response.errno === ERR_OK) {

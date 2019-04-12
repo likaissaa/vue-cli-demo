@@ -6,7 +6,7 @@
 					<div class="logo-wrapper">
 						<div class="logo" :class="{'highlight':totalCount>0}">
 							<i class="icon-shopping_cart" :class="{'highlight':totalCount>0}">
-							
+
 						</i>
 						</div>
 						<div class="num" v-show="totalCount>0">{{totalCount}}</div>
@@ -41,12 +41,13 @@
 								<option>采购</option>
 								<option>内贸</option>
 								<option>外贸</option>
+                <option>泛迪</option>
 								<option>暂无</option>
 							</select>
 						</h1>
 						<span class="empty" @click="empty">清空</span>
 					</div>
-	
+
 					<div class="list-content" ref="listcontent">
 						<ul>
 							<li class="food" v-for="food in selectFoods">
@@ -162,7 +163,7 @@
 				}
 				return show;
 			}
-			
+
 		},
 		methods: {
 			pay(){
@@ -237,7 +238,7 @@
 				}
 				this.fold = !this.fold;
 			},
-		
+
 		}
 	}
 </script>
@@ -369,7 +370,7 @@
 			top:0;
 			left:0;
 			z-index:-1;
-			width:100%; 
+			width:100%;
 			transform:translate3d(0,-100%,0);
 			&.fold-enter-active, &.fold-leave-active{
 				transition: all 0.5s;
@@ -396,7 +397,7 @@
 					font-size: 12px;
 					color:rgb(0,160,220)
 				}
-				
+
 			}
 			.list-content{
 				padding:0 18px;
@@ -427,12 +428,12 @@
 						position:absolute;
 						right:0;
 						bottom:6px;
-						
+
 					}
 				}
 			}
 		}
-		
+
 	}
 	.list-mask{
 		position:fixed;

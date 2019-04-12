@@ -11,7 +11,7 @@
 			<div class="tab-item">
 				<router-link to="/seller">商家</router-link>
 			</div>
-			
+
 		</div>
 		<!--<div>
 			<v-star :size="24" :score="4.1"></v-star>
@@ -48,7 +48,8 @@
 			'v-star':Star
 		},
 		created(){
-			 this.axios.get("/api/seller")
+      const url = debug ? '/api/seller' : 'http://art.xminnov.com:8080/sell/api/seller';
+			 this.axios.get(url)
                     .then(response => {
                     	 if (response.data.errno === ERR_OK) {
                     	 	this.seller=response.data.data
@@ -63,7 +64,7 @@
 		},
 		methods:{
 			clickme:function(){
-                
+
 			}
 		}
 	}

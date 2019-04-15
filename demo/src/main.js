@@ -6,11 +6,12 @@ import store from './store/index';
 import {
 	router
 } from './router'
+import fastclick from 'fastclick'
 import axios from './axios/http.js'
-
+import VueClipboard from 'vue-clipboard2'
 import '@/common/stylus/index.styl'
 
-
+Vue.use(VueClipboard)
 Vue.config.productionTip = false
 Vue.prototype.axios = axios;
 /* eslint-disable no-new */

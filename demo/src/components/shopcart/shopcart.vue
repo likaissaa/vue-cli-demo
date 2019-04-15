@@ -18,7 +18,7 @@
 						另需配送费¥{{deliveryPrice}}元
 					</div>
 				</div>
-				<div class="content-right" @click.stop.prevent="pay">
+				<div class="content-right" @click.prevent.stop v-clipboard:copy = "pay" v-clipboard:success = "onCopy" v-clipboard:error="onError">
 					<div class="pay" :class="payClass">
 						{{payDesc}}
 					</div>
@@ -37,11 +37,11 @@
 				<div class="shopcart-list" v-show="listShow">
 					<div class="list-header">
 						<h1 class="title">部门选择
-							<select class="selectDepart">
-								<option>采购</option>
-								<option>内贸</option>
-								<option>外贸</option>
-                <option>泛迪</option>
+							<select class="selectDepart" v-model="selectDepart">
+								<option value="采购">采购</option>
+								<option value="内贸">内贸</option>
+								<option value="外贸">外贸</option>
+                				<option>泛迪</option>
 								<option>暂无</option>
 							</select>
 						</h1>
@@ -103,7 +103,9 @@
 					show: false
 				}],
 				dropBalls: [],
-				fold:true
+				fold:true,
+				selectDepart: '泛迪',
+				message: ''
 			}
 		},
 		components: {
@@ -162,16 +164,63 @@
 					})
 				}
 				return show;
-			}
-
-		},
-		methods: {
-			pay(){
+			},
+			pay() {
 				if(this.totalPrice <this.minPrice){
 					//如果商品总价超过最小付钱价格   不进行任何操作
 					return;
 				}
-				window.alert(`支付${this.totalPrice}`)
+				// 1 公司信息
+				// 2 餐信息 价格
+				// 3 总价格
+				var first = `公司:${this.selectDepart}\n`
+				var second = ``
+				for (var i=0 ;i< this.selectFoods.length; i++) {
+					 second += `${this.selectFoods[i].name}  X${this.selectFoods[i].count}  ¥${this.selectFoods[i].price*this.selectFoods[i].count}\n` 
+				}
+				console.log(this.totalCount)
+				var third = `总计:${this.totalPrice}`
+				 return first + second + third
+			}
+
+		},
+		methods: {
+			// pay(){
+			// 	if(this.totalPrice <this.minPrice){
+			// 		//如果商品总价超过最小付钱价格   不进行任何操作
+			// 		return;
+			// 	}
+			// 	// 1 公司信息
+			// 	// 2 餐信息 价格
+			// 	// 3 总价格
+			// 	var first = `公司:${this.selectDepart}\n`
+			// 	var second = ``
+			// 	for (var i=0 ;i< this.selectFoods.length; i++) {
+			// 		 second += `${this.selectFoods[i].name}  X${this.selectFoods[i].count}  ¥${this.selectFoods[i].price*this.selectFoods[i].count}\n` 
+			// 	}
+			// 	console.log(this.totalCount)
+			// 	var third = `总计:${this.totalPrice}`
+			// 	 var boolean =window.confirm(first+second +third)
+			// 	if(boolean) {
+			// 		//开始复制剪切板功能
+			// 		// 即将关闭 并复制按钮
+			// 	}
+			// },
+			onCopy(e){
+				var boolean = window.confirm(e.text)
+				if(boolean) {
+					setTimeout(() => {
+					WeixinJSBridge.call('closeWindow');
+				}, 1000)
+				}
+				else {
+					window.alert(请重新进行选择)
+				}
+				
+				
+			},
+			onError(e) {
+				alert('Failed to copy texts')
 			},
 			empty(){
 				this.selectFoods.forEach((food)=>{

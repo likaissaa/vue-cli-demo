@@ -173,7 +173,7 @@
 				// 1 公司信息
 				// 2 餐信息 价格
 				// 3 总价格
-				var first = `公司:${this.selectDepart}\n`
+				var first = `部门:${this.selectDepart}\n`
 				var second = ``
 				for (var i=0 ;i< this.selectFoods.length; i++) {
 					 second += `${this.selectFoods[i].name}  X${this.selectFoods[i].count}  ¥${this.selectFoods[i].price*this.selectFoods[i].count}\n` 
